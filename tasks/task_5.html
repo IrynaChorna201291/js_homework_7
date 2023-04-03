@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 7</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+				<section class="main__page block-main">
+					<h1>Task 5</h1>
+					<p>
+						Задача 5. Створити окремі функції, які переводять:<br>
+						Сантиметри у дюйми;<br>
+						Кілограми у фунти;<br>
+						Кілометри у милі.
+					</p>
+				</section>
+				<script>
+					//опис функції для перетворення сантиметри у дюйми
+					function getTransformInch(centimeters) {
+						const inch =centimeters / 2.54 
+						return inch
+					}
+					//опис функції для перетворення кілограми у фунти
+					function getTransformPounds(kilograms) {
+						const pounds = kilograms * 2.205
+						return pounds
+					}
+					//опис функції для перетворення километри у милі
+					function getTransformMiles(kilometers) {
+						const miles = kilometers / 1.609
+						return miles
+					}
+const userQuantityCentimeters = parseFloat(prompt('Введіть кількість сантиметрів'))
+const userQuantityKilograms = parseFloat(prompt('Введіть кількість кілограм'))
+const userQuantityKilometers = parseFloat(prompt('Введіть кількість кілометрів'))
+
+document.write(`
+<div>${userQuantityCentimeters} сантиметрів = ${getTransformInch(userQuantityCentimeters).toFixed(2)} дюймів </div>
+<div>${userQuantityKilograms} кілограм = ${getTransformPounds(userQuantityKilograms).toFixed(2)} фунтів</div>
+<div>${userQuantityKilometers} кілометрів = ${getTransformMiles(userQuantityKilometers).toFixed(2)} миль</div>
+`)
+				</script>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

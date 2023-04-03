@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 7</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+				<section class="main__page block-main">
+					<h1>Task 2</h1>
+					<p>
+						Задача 2. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+					</p>
+				</section>
+				<script>
+
+//Опис функції
+function isStatusDay(userNumberDay) {
+	let result
+	switch (userNumberDay) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5: result = 'Working day'
+			break;
+		case 6:
+		case 7: result = 'Day Off'	
+			break
+			default: result = 'Error'
+	}
+	return result
+}
+//Використання і розв'язання 
+const userNumberDay = parseInt(prompt('Введіть номер дня тижня'))
+document.write(isStatusDay(userNumberDay))
+				</script>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

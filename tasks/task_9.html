@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 7</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+				<section class="main__page block-main">
+					<h1>Task 9</h1>
+					<p>
+						Задача 9. Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.
+					</p>
+				</section>
+				<script>
+					function getQuantityNegativeTemperature(temperatureValue) {
+						let countNegativeTemperature = 0
+						const minRandomTemperature = -100
+						const maxRandomTemperature = 100
+						for (let i = 1; i <= temperatureValue; i++) {
+							const randomTemperature = minRandomTemperature + Math.floor(Math.random() * (maxRandomTemperature - minRandomTemperature + 1))
+							if (randomTemperature < 0) 
+							countNegativeTemperature++
+							document.write(`
+							Показник № ${i} = ${randomTemperature}<br>
+							`)
+						}
+						return countNegativeTemperature
+					}
+					const quantityNegativeTemperature = getQuantityNegativeTemperature(parseFloat(prompt('Введіть кількість показників температури')))
+					document.write(`Кількість від'ємних показників температури: ${quantityNegativeTemperature}`)
+				</script>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

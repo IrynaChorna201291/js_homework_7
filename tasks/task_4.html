@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 7</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+				<section class="main__page block-main">
+					<h1>Task 4</h1>
+					<p>
+						Задача 4. Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+					</p>
+				</section>
+				<script>
+
+					function getResult(...numbers) {
+						//кількість парних
+						let quantityEvenNumbers = 0
+						for (let i = 0; i < numbers.length; i++) {
+							if (numbers[i] % 2 === 0) {
+								quantityEvenNumbers = quantityEvenNumbers + 1
+							}
+						}
+						//кількість додатніх
+						let quantityPositiveNumbers = 0
+						for (let i = 0; i < numbers.length; i++) {
+							if (numbers[i] > 0) {
+								quantityPositiveNumbers = quantityPositiveNumbers + 1
+							}
+						}
+						//кількість чисел більшіх за 100
+						let quantityMoreHundredNumbers = 0
+						for (let i = 0; i < numbers.length; i++) {
+							if (numbers[i] > 100) {
+								quantityMoreHundredNumbers = quantityMoreHundredNumbers + 1
+							}
+						}
+						return [quantityEvenNumbers, quantityPositiveNumbers, quantityMoreHundredNumbers]
+					}
+					const userNumber1 = parseFloat(prompt('Введіть перше число'))
+					const userNumber2 = parseFloat(prompt('Введіть друге число'))
+					const userNumber3 = parseFloat(prompt('Введіть третє число'))
+
+					let message = getResult(userNumber1, userNumber2, userNumber3)
+					document.write(`
+					<div>
+						Ви ввели: ${userNumber1}, ${userNumber2}, ${userNumber3}
+						</div>
+						<div>
+							Кількість парних = ${message[0]}
+							</div>
+						<div>
+							Кількість кількість додатніх = ${message[1]}
+							</div>
+						<div>
+							Кількість чисел більших за 100 = ${message[2]}
+							</div>
+					`)
+				</script>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>
